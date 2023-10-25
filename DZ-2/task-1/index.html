@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task-1</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <style>
+        #login-form {
+            margin: 50px auto;
+            width: 800px;
+        }
+        .login-button {
+            margin-top: 30px;
+        }
+        .success-image {
+            margin-top: 50px;
+            width: 80px;
+            height: 80px;
+        }
+        .commonErrorMessage {
+            color: #b21c1c;
+        }
+        .ivanErrorMessage {
+            color: blue;
+        }
+        .user-help-row {
+            padding-left: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="pt-5">
+        <div class="container">
+            <div class="d-flex justify-content-center text-black">
+                <h3>Task-1</h3>
+            </div>
+
+            <div id="login-form">
+                <div class="row">
+                    <div class="row"><b>Довідка:</b></div>
+                    <hr>
+                    <div class="row user-help-row" v-for="(user, index) in getUserList">{{user.name}} - {{user.password}}</div>
+                </div>
+
+                <hr>
+                <div class="row" v-if="loginResult.loginError || loginResult.loginIsIvan">
+                    <p :class="{'commonErrorMessage': loginResult.loginError,  'ivanErrorMessage': loginResult.loginIsIvan}">Неправильний логін</p>
+                </div>
+                <div class="form-group">
+                    <label>Логін</label>
+                    <input type="email" class="form-control" v-model="userLogin" @keyup.enter="loginUser">
+                </div>
+
+                <div class="form-group mt-3">
+                    <label>Пароль</label>
+                    <input type="password" class="form-control" v-model="userPassword" @keyup.enter="loginUser">
+                </div>
+
+                <button type="button" class="btn btn-primary login-button" @click="loginUser">Увійти</button>
+
+                <div class="success-box" v-if="loginResult.loginSuccess">
+                    <img src="images/smile.png" class="success-image" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        const usersList = [
+            {
+                'name': 'user1',
+                'password': 'password'
+            },
+            {
+                'name': 'user2',
+                'password': 'password'
+            },
+            {
+                'name': 'Ivan',
+                'password': 'password'
+            },
+        ];
+
+        const app = createApp({
+            data() {
+                return {
+                    userLogin: null,
+                    userPassword: null,
+                    loginResult: {
+                        loginSuccess: false,
+                        loginError: false,
+                        loginIsIvan: false,
+                    }
+                }
+            },
+            computed: {
+                getUserList() {
+                    return usersList;
+                }
+            },
+            methods: {
+                loginUser() {
+                    // Обнуляю об'єкт з результатами
+                    this.resetResult();
+
+                    let userFromList = usersList.find((user) => this.userLogin && this.userLogin.toLowerCase() === user.name.toLowerCase())
+                    if (userFromList !== undefined) {
+                        // Якщо користувач знайден
+                        if (userFromList.password === this.userPassword) {
+
+                            // Якщо пароль співпав
+                            this.loginResult.loginSuccess = true;
+                        } else {
+                            // Якщо пароль не співпав, але логін користувача Ivan
+                            if (userFromList.name === 'Ivan') {
+                                this.loginResult.loginIsIvan = true;
+                            } else {
+                                // Пароль не співпав і логін користувача не Ivan
+                                this.loginResult.loginError = true;
+                            }
+                        }
+                    } else {
+                        // Пароль не співпав і логін користувача не Ivan
+                        this.loginResult.loginError = true;
+                    }
+                },
+                resetResult() {
+                    this.loginResult = {
+                        loginSuccess: false,
+                        loginError: false,
+                        loginIsIvan: false,
+                    }
+                }
+            }
+        })
+
+        app.mount('#app');
+    </script>
+</body>
+</html>
