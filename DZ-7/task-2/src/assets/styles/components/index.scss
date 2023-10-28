@@ -1,0 +1,28 @@
+.page-title {
+  padding-left: 40px;
+  margin-bottom: 40px;
+}
+.task-title {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  justify-content: center;
+  margin: 50px;
+}
+.product-list {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+}
+.product-cart {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+}
+.product-amount {
+  background-color: #9acffd;
+  border-radius: 50%;
+  padding: 8px 0 0 12px;
+  height: 36px;
+  width: 36px;
+}
