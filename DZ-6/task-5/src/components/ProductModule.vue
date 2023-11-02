@@ -1,7 +1,7 @@
 <template>
     <div class="product-block">
         <product-filter/>
-        <product-list/>
+        <product-list :products="filterProducts()"/>
     </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     components: {ProductList, ProductFilter},
     computed: {
         ...mapGetters(['getBrands', 'getSuppliers', 'getFilters', 'getProducts']),
-        ...mapState(['brands', 'suppliers']),
+        ...mapState(['filters']),
     },
     data() {
         return {
@@ -31,27 +31,16 @@ export default {
     methods: {
         ...mapActions(['addToFilter', 'removeFromFilter']),
         filterProducts() {
-            this.makeFiltersObject();
+            let products = this.getProducts;
 
-        },
-        makeFiltersObject() {
-            this.getSuppliers.forEach((filter) => {
-                if (filter.state) {
-                    this.addToFilter({title:"supplier", value: filter});
-                } else {
-                    this.removeFromFilter({title:"supplier", value: filter});
-                }
-            });
+            //
+            console.log(products)
+
+            return products;
         },
     },
     watch: {
-        brands: {
-            handler(){
-                this.filterProducts();
-            },
-            deep: true
-        },
-        suppliers: {
+        filters: {
             handler(){
                 this.filterProducts();
             },

@@ -19,7 +19,7 @@
             </div>
             <div id="alphabetical-index">Алфавитний вказівник</div>
             <div class="d-flex mt-2" v-for="brand in getBrands" :key="brand.id">
-                <input type="checkbox" class="supplier-checkbox" v-model="brand.state">
+                <input type="checkbox" class="supplier-checkbox" v-model="brand.state" @change="changeFilter(brand)">
                 <div>{{brand.name}}</div>
             </div>
         </div>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
     name: "ProductFilter",
@@ -40,6 +40,16 @@ export default {
         getAmountSuppliers() {
             return this.getSuppliers.length;
         },
-    }
+    },
+    methods: {
+        ...mapActions(['addToFilter', 'removeFromFilter']),
+        changeFilter(filter) {
+            if (filter.state) {
+                this.addToFilter({title: "brand", "value": filter})
+            } else {
+                this.removeFromFilter({title: "brand", "value": filter})
+            }
+        }
+    },
 }
 </script>
