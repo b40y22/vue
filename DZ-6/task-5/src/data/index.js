@@ -2,12 +2,14 @@ export const suppliers = [
     {
         id: 1,
         name: 'Rozetka',
-        state: false
+        state: false,
+        group: 'suppliers',
     },
     {
         id: 2,
         name: 'Інші продавці',
-        state: false
+        state: false,
+        group: 'suppliers',
     }
 ]
 
@@ -15,27 +17,32 @@ export const brands = [
     {
         id: 1,
         name: 'Apple',
-        state: false
+        state: false,
+        group: 'brands',
     },
     {
         id: 2,
         name: 'Huawei',
-        state: false
+        state: false,
+        group: 'brands',
     },
     {
         id: 3,
         name: 'LG',
-        state: false
+        state: false,
+        group: 'brands',
     },
     {
         id: 4,
         name: 'Nokia',
-        state: false
+        state: false,
+        group: 'brands',
     },
     {
         id: 5,
         name: 'Oppo',
-        state: false
+        state: false,
+        group: 'brands',
     },
 ]
 export const products = [

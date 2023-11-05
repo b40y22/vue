@@ -1,4 +1,5 @@
 import { createStore } from "vuex";
+import {brands, products, suppliers} from "@/data";
 
 export default createStore({
   state: {
@@ -6,8 +7,8 @@ export default createStore({
     suppliers: [],
     brands: [],
     filters: {
-      supplier: [],
-      brand: [],
+      suppliers: [],
+      brands: [],
     }
   },
   getters: {
@@ -50,13 +51,13 @@ export default createStore({
     }
   },
   actions: {
-    setBrands(context, brands) {
+    setBrands(context) {
       context.commit("setBrands", brands);
     },
-    setProducts(context, products) {
+    setProducts(context) {
       context.commit("setProducts", products);
     },
-    setSuppliers(context, suppliers) {
+    setSuppliers(context) {
       context.commit("setSuppliers", suppliers);
     },
     addToFilter(context, filter) {
