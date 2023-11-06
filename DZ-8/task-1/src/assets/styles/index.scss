@@ -1,0 +1,36 @@
+.category-filter-block {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  height: 300px;
+}
+
+.category-card {
+  border: 3px solid #c4c3c3;
+  color: #868686;
+  border-radius: 15px;
+  background-color: #ffffff;
+  cursor: pointer;
+  margin: 15px;
+  box-shadow: 12px 13px 49px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 12px 13px 49px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 12px 13px 49px 0px rgba(0, 0, 0, 0.75);
+}
+
+.category-card:hover {
+  color: #000000;
+}
+
+.category-card-image-block {
+  padding: 10px;
+  height: 220px;
+}
+
+.category-card-image {
+  width: 200px;
+}
+
+.category-card-title {
+  display: flex;
+  justify-content: center;
+}
