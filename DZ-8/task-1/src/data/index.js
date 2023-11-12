@@ -30,7 +30,7 @@ export const products = [
         discount: 19999,
         image: "https://content.rozetka.com.ua/goods/images/big/322631323.jpg",
         link: "https://hard.rozetka.com.ua/samsung-ls28bg702eixua/p372354219/",
-        categoryId: 1,
+        category: "monitors"
 
     },
     {

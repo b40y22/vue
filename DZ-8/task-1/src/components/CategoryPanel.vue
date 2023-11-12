@@ -5,13 +5,13 @@
 
   <div class="d-flex justify-content-center">
     <div class="col-10 category-filter-block">
-      <category-card v-for="category in getCategories" :key="category" :category="category" />
+      <category-card v-for="category in getCategories" :key="category" :category="category" @select-category="setCurrentCategory"/>
     </div>
   </div>
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import CategoryCard from "@/components/CategoryCard.vue";
 
 export default {
@@ -19,6 +19,9 @@ export default {
   components: {CategoryCard},
   computed: {
     ...mapGetters(["getCategories"]),
-  }
+  },
+  methods: {
+    ...mapActions(["setCurrentCategory"])
+  },
 };
 </script>
