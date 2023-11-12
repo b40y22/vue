@@ -1,5 +1,6 @@
 export const categories = [
     {
+        id: 1,
         name: "Мониторы",
         image: "https://video.rozetka.com.ua/img_superportal/kompyutery_i_noutbuki/monitory.png",
         category: "monitors",
@@ -24,16 +25,17 @@ export const categories = [
 export const products = [
     {
         id: 1,
-        name: "Монитор 28\" Samsung Odyssey G7 LS28BG702 (LS28BG702EIXUA) UHD 4K HDR400 / IPS 8-Bit + FRC / 144Гц / DCI-P3 90% / G-SYNC Compatible",
+        name: "Монитор 28\" Samsung Odyssey G7 LS28BG702",
         price: 22999,
         discount: 19999,
         image: "https://content.rozetka.com.ua/goods/images/big/322631323.jpg",
         link: "https://hard.rozetka.com.ua/samsung-ls28bg702eixua/p372354219/",
-        category: "monitors"
+        categoryId: 1,
+
     },
     {
         id: 2,
-        name: "Монитор 23.8\" Asus VG249Q (90LM05E0-B03170) Adaptive-Sync / G-SYNC Compatible / FreeSync Premium",
+        name: "Монитор 23.8\" Asus VG249Q",
         price: 8299,
         discount: 7199,
         image: "https://content.rozetka.com.ua/goods/images/big/20684949.jpg",
@@ -42,7 +44,7 @@ export const products = [
     },
     {
         id: 3,
-        name: "Монитор ASUS 24” VY249HGE (90LM06A5-B02370) IPS FHD 144Гц / 8-Bit / Adaptive Sync / Freesync Premium",
+        name: "Монитор ASUS 24” VY249HGE",
         price: 7299,
         discount: 5999,
         image: "https://content1.rozetka.com.ua/goods/images/big/341538424.jpg",
@@ -51,7 +53,7 @@ export const products = [
     },
     {
         id: 4,
-        name: "Принтер Epson EcoTank L3251 (C11CJ67413)",
+        name: "Принтер Epson EcoTank L3251",
         price: 10179,
         discount: 0,
         image: "https://content.rozetka.com.ua/goods/images/big/311366595.jpg",
@@ -69,7 +71,7 @@ export const products = [
     },
     {
         id: 6,
-        name: "Счетчик банкнот MBC MBC-1100CL (200002505309)",
+        name: "Счетчик банкнот MBC MBC-1100CL",
         price: 6720,
         discount: 5999,
         image: "https://content2.rozetka.com.ua/goods/images/big/12181861.jpg",
@@ -87,7 +89,7 @@ export const products = [
     },
     {
         id: 8,
-        name: "Автомагнитола Blaupunkt BPA1123 BT Черная (000001494)",
+        name: "Автомагнитола Blaupunkt BPA1123",
         price: 2726,
         discount: 0,
         image: "https://content1.rozetka.com.ua/goods/images/big/369463583.jpg",
@@ -96,7 +98,7 @@ export const products = [
     },
     {
         id: 9,
-        name: "Бесщеточная ударная аккумуляторная дрель-шуруповерт Bosch Professional GSB 185 -li, 18В, 2 аккум.GBA 2амп.ч, зарядное устройство, чемодан (06019K3100)",
+        name: "Bosch Professional GSB 185 -li, 18В",
         price: 7630,
         discount: 6582,
         image: "https://content.rozetka.com.ua/goods/images/big/328069955.jpg",
@@ -105,7 +107,7 @@ export const products = [
     },
     {
         id: 10,
-        name: "Инструмент Voltronic TY-311 для обжимки RJ-45 (8P8C) 8P (YT-TY-311)",
+        name: "Инструмент Voltronic TY-311",
         price: 168,
         discount: 0,
         image: "https://content2.rozetka.com.ua/goods/images/big/249818593.jpg",
