@@ -22,7 +22,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(company, index) in getFilteredCompanies" :key="company.id">
+        <tr
+          v-for="(company, index) in getFilteredCompanies"
+          :key="company.id"
+          @click="log(company.name)"
+        >
           <td>{{ index + 1 }}</td>
           <td>{{ company.name }}</td>
           <td>{{ company.rate }}</td>
@@ -59,6 +63,9 @@ export default {
     ...mapActions(["removeCompany"]),
     removeCurrentCompany(id) {
       this.removeCompany(id);
+    },
+    log(name) {
+      console.log(name);
     },
   },
 };
