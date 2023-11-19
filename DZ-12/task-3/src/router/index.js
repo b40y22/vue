@@ -1,20 +1,41 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import RootView from "@/views/RootView.vue";
+import EmployeesView from "@/views/EmployeesView.vue";
+import CandidatesView from "@/views/CandidatesView.vue";
+import MeetsView from "@/views/MeetsView.vue";
+import CandidateEdit from "@/views/CandidateEdit.vue";
+import EmployeeEdit from "@/views/EmployeeEdit.vue";
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    name: "root",
+    component: RootView,
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/employees",
+    name: "employees",
+    component: EmployeesView,
+  },
+  {
+    path: "/candidates",
+    name: "candidates",
+    component: CandidatesView,
+  },
+  {
+    path: "/candidate/:id",
+    name: "candidate-edit",
+    component: CandidateEdit,
+  },
+  {
+    path: "/employee/:id",
+    name: "employee-edit",
+    component: EmployeeEdit,
+  },
+  {
+    path: "/meets",
+    name: "meets",
+    component: MeetsView,
   },
 ];
 
